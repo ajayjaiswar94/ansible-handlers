@@ -1,0 +1,15 @@
+---
+- name: update apt cacche and install nginix
+  apt:
+    name: nginix
+    state: latest
+    update_cache: yes
+
+- name: update the html page
+  template: src=index.html dest=/usr/share/nginx/html/index.html
+
+- name: update the html page
+  template: src=update.html dest=/usr/share/nginx/html/index.html
+### this is ansible handler the below one
+  notify:
+    - Restart Nginx

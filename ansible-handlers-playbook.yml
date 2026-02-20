@@ -1,0 +1,13 @@
+---
+- name: exmaple of usering handlers
+  hosts: all
+  becomes: yes
+  remote_user: ansible
+  roles:
+    - handlers
+
+  handlers:
+    - name: Restart Nginx  ## this is getting callled from main.yaml file which is in the task folder in notify section 
+      service:
+        name: Nginx
+        state: restarted
