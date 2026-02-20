@@ -8,6 +8,7 @@
 - name: update the html page
   template: src=index.html dest=/usr/share/nginx/html/index.html
 
+## whenever this below execution happens it will notify the handlers to restart the nginix
 - name: update the html page
   template: src=update.html dest=/usr/share/nginx/html/index.html
 ### this is ansible handler the below one
